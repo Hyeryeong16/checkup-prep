@@ -1,0 +1,368 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px 96px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 26px;
+  font-weight: 650;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.header p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* ---------- 검사 선택 ---------- */
+
+.exam-section {
+  margin-bottom: 32px;
+}
+
+.exam-section h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .exam-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exam-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.exam-card:hover {
+  border-color: var(--accent);
+}
+
+.exam-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.exam-card input {
+  margin-top: 2px;
+  accent-color: var(--accent);
+}
+
+.pregnant-toggle {
+  margin-top: 8px;
+  width: fit-content;
+}
+
+.exam-card .label {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.exam-card .category {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: var(--accent-ink);
+}
+
+.submit-btn:disabled {
+  background: var(--line);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: var(--warn);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* ---------- 결과 ---------- */
+
+.results {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.warning-banner {
+  background: var(--warn-soft);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.warning-banner + .warning-banner {
+  margin-top: -12px;
+}
+
+.results h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+/* 타임라인: 날짜(D-day) 기준으로 먼저 묶고, 그 안에 항목을 간결한 목록으로 표시.
+   제목만 먼저 보이고 클릭하면 상세 설명이 펼쳐짐(정보 과부하 방지) */
+.timeline {
+  margin-bottom: 40px;
+}
+
+.day-group {
+  margin-bottom: 26px;
+}
+
+.day-group:last-child {
+  margin-bottom: 0;
+}
+
+.day-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.day-label {
+  font-weight: 700;
+  color: var(--accent-ink);
+}
+
+.day-date {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.past-note {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 7px;
+  line-height: 1.6;
+}
+
+.day-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.day-items details {
+  border-radius: var(--radius-sm);
+}
+
+.day-items summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 8px 8px 8px 20px;
+  margin: 0 -8px;
+  position: relative;
+  border-radius: var(--radius-sm);
+}
+
+.day-items summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-items summary::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 15px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.day-items summary:hover {
+  background: var(--accent-soft);
+}
+
+.day-items .desc {
+  margin: 0 0 10px;
+  padding: 0 8px 0 20px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* 검진 전 확인이 필요한 항목: 결과 화면에서 가장 먼저 눈에 띄도록 박스로 강조 */
+.notice-box {
+  background: var(--warn-soft);
+  border: 1px solid #e7c3b9;
+  border-left: 4px solid var(--warn);
+  border-radius: var(--radius-md);
+  padding: 18px 20px 14px;
+  margin-bottom: 40px;
+}
+
+.results .notice-box h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--warn);
+  margin: 0 0 10px;
+}
+
+.notice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notice-list summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding: 8px 6px 8px 18px;
+  font-size: 14px;
+  line-height: 1.55;
+  border-radius: var(--radius-sm);
+}
+
+.notice-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.notice-list summary::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 15px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warn);
+}
+
+.notice-list summary:hover {
+  background: rgba(181, 68, 46, 0.08);
+}
+
+.notice-list .desc {
+  margin: 0 0 8px;
+  padding: 0 6px 0 18px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.notice-hint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* 각 항목이 어떤 검사와 관련 있는지 보여주는 태그 */
+.exam-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: 8px;
+  vertical-align: 1px;
+}
+
+.exam-tag {
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 0 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+.exam-tag.warn {
+  background: #fff;
+  color: var(--warn);
+  border: 1px solid #e7c3b9;
+}
+
+/* 검진일 입력 */
+.date-input {
+  font: inherit;
+  font-size: 15px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.date-input:focus {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.aftercare-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  margin-top: 32px;
+}
+
+.results .aftercare-box h2 {
+  color: var(--ink);
+}
+
+.disclaimer {
+  margin: 24px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}

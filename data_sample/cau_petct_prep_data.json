@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "source": "중앙대학교병원 핵의학과",
+    "collected_date": "2026-09-15",
+    "last_verified_date": "2026-09-15",
+    "note": "PET-CT 세 번째 교차검증 자료. 금식시간 3개 병원 모두 다름(6시간/자정부터/8시간) - '가장 보수적 기준(자정부터, 삼성서울병원)'을 서비스 기본값으로 최종 확정 권장. 운동/당분 제한은 이번 자료에도 없어 '일부 병원만의 안내'로 재확인됨."
+  },
+  "prep_items": [
+    {
+      "prep_id": "cau_petct_01",
+      "exam_id": "pet_ct",
+      "category": "금식",
+      "start_day_offset": 0,
+      "end_day_offset": 0,
+      "severity": "high",
+      "conflict_group": "petct_fasting",
+      "title": "PET-CT - 8시간 이상 금식 (생수만 가능)",
+      "description": "8시간 이상 금식해야 하며, 생수만 섭취 가능합니다.",
+      "discrepancy_vs_others": "분당차병원(6시간), 삼성서울병원(전날 자정부터=약 10시간+), 중앙대병원(8시간)까지 세 병원 모두 다른 금식 시간 - 이제 3곳 교차검증 결과 '6~10시간 범위'로 수렴한다고 볼 수 있음. 서비스 기본값은 가장 보수적인 삼성서울병원 기준(전날 자정부터)을 유지하되, '병원마다 6~10시간 사이로 다를 수 있음' 안내 문구 권장.",
+      "source": "중앙대학교병원 핵의학과",
+      "last_verified_date": "2026-09-15"
+    },
+    {
+      "prep_id": "cau_petct_02",
+      "exam_id": "pet_ct",
+      "category": "약물유지(예외)",
+      "start_day_offset": 0,
+      "end_day_offset": 0,
+      "severity": "medium",
+      "conflict_group": "petct_diabetes",
+      "title": "당뇨환자 - 당일 당뇨약 지참 (중단이 아닌 '지참')",
+      "description": "당뇨환자는 검사 당일 당뇨약을 지참합니다.",
+      "note": "분당차병원 자료는 '담당의 지시에 따른 개별 혈당 조절'로 다소 모호했는데, 이 자료는 '당일 지참'이라는 명확한 액션으로 표현 - '중단'이 아니라 '휴대'라는 점에서 일반 당뇨약 규칙(당일 중단)과는 다른 예외 처리가 필요함을 재확인.",
+      "disclaimer_flag": true,
+      "source": "중앙대학교병원 핵의학과",
+      "last_verified_date": "2026-09-15"
+    },
+    {
+      "prep_id": "cau_petct_03",
+      "exam_id": "pet_ct",
+      "category": "검사 불가 조건",
+      "start_day_offset": null,
+      "end_day_offset": 0,
+      "severity": "high",
+      "conflict_group": "pregnancy_check",
+      "title": "임산부/가임 여성 - 사전 주치의 상담 필요",
+      "description": "임산부 및 가임 여성의 경우 사전에 주치의와 상담이 필요합니다.",
+      "applies_to": "임신 중이거나 가임기인 여성",
+      "note": "common의 임신 확인 규칙과 별개로 PET-CT에서 다시 한번 강조 - 방사성의약품 특성상 다른 검사보다 더 엄격하게 다뤄야 함을 시사.",
+      "disclaimer_flag": true,
+      "source": "중앙대학교병원 핵의학과",
+      "last_verified_date": "2026-09-15"
+    },
+    {
+      "prep_id": "cau_petct_04",
+      "exam_id": "pet_ct",
+      "category": "행정/예약",
+      "start_day_offset": -1,
+      "end_day_offset": 0,
+      "severity": "medium",
+      "conflict_group": "petct_reschedule",
+      "title": "검사 취소 시 하루 전(근무시간) 연락 필요",
+      "description": "검사를 취소하는 경우 하루 전 근무시간까지 핵의학과로 연락해야 합니다.",
+      "note": "분당차병원 자료(하루 전 통보)와 일치 - 교차검증 완료. PET-CT는 방사성의약품 소모성 재료 특성상 예약 변경 기한이 촉박하다는 패턴이 두 병원에서 재확인됨.",
+      "source": "중앙대학교병원 핵의학과",
+      "last_verified_date": "2026-09-15"
+    },
+    {
+      "prep_id": "cau_out_scope_01",
+      "exam_id": "out_of_scope_myocardial_spect",
+      "category": "약물중단",
+      "start_day_offset": -2,
+      "end_day_offset": 0,
+      "severity": "medium",
+      "conflict_group": "caffeine_asthma_med_restriction",
+      "title": "[스코프 외] 심근 SPECT - 카페인/천식약 제한",
+      "description": "검사 전날 카페인 함유 식품(커피, 콜라, 초콜릿, 차 종류), 바나나, 카페인 함유 약품(진통제, 드링크류, 감기약) 복용을 금합니다. 기관지 천식약 일부는 검사 전 48시간 복용을 중단해야 하며(담당의 지시 필요), 검사 당일 금연도 필요합니다.",
+      "note": "현재 8개 검사 목록엔 심근 SPECT가 없음. 심장 관련 특수검사 확장 시 참고 - 카페인 제한(D-1)과 천식약 중단(48시간)이라는 새로운 카테고리 확인.",
+      "source": "중앙대학교병원 핵의학과",
+      "last_verified_date": "2026-09-15"
+    },
+    {
+      "prep_id": "cau_out_scope_02",
+      "exam_id": "out_of_scope_bone_scan",
+      "category": "검사 당일 절차",
+      "start_day_offset": 0,
+      "end_day_offset": 0,
+      "severity": "low",
+      "conflict_group": "bone_scan_urination",
+      "title": "[스코프 외] 골 스캔 - 금식 불필요, 검사 전 소변 필수",
+      "description": "금식이 필요 없으며, 주사 후 물을 많이 마시고 검사 전 반드시 소변을 봐야 합니다(골반 부위 판독을 위해). 모유 수유 중인 경우 24시간 후 수유 가능합니다.",
+      "note": "PET-CT와 마찬가지로 '검사 전 소변 필요'(방광초음파와 반대 방향) 패턴 재확인. 골 스캔은 현재 스코프 밖이나 향후 확장 시 참고.",
+      "source": "중앙대학교병원 핵의학과",
+      "last_verified_date": "2026-09-15"
+    }
+  ]
+}

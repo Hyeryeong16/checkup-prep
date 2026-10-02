@@ -1,0 +1,21 @@
+# 비밀번호 및 환경변수
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Frontend
+node_modules/
+dist/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
